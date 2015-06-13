@@ -5,12 +5,8 @@ cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
 # Set version
 set(PROJECT_VERSION "0.1.0")
 
-# ECM
-find_package(ECM 0.0.11 REQUIRED NO_MODULE)
-set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake" ${ECM_MODULE_PATH} ${ECM_KDE_MODULE_DIR})
-
 # Installation directories
-include(KDEInstallDirs)
+include(GNUInstallDirs)
 
 # Macro to print feature summary
 include(FeatureSummary)

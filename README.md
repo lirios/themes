@@ -11,7 +11,6 @@ This repository contains the Hawaii theme for Plymouth.
 In order to install this theme you need:
 
 * [CMake](http://www.cmake.org)
-* [extra-cmake-modules](http://quickgit.kde.org/?p=extra-cmake-modules.git)
 
 ## Installation
 
