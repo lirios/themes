@@ -1,4 +1,4 @@
-set(THEME_DIR ${CMAKE_INSTALL_DATADIR}/plymouth/hawaii)
+set(THEME_DIR ${CMAKE_INSTALL_DATADIR}/plymouth/themes/hawaii)
 
 configure_file(
     "${CMAKE_CURRENT_SOURCE_DIR}/hawaii.plymouth.in"
