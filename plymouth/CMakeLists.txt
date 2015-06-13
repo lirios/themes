@@ -62,7 +62,7 @@ install(FILES ${FILES} DESTINATION ${THEME_DIR})
 install(FILES "${CMAKE_CURRENT_BINARY_DIR}/hawaii.plymouth"
         DESTINATION ${THEME_DIR})
 
-install(FILES ${CMAKE_SOURCE_DIR}/common/noise-100-45-5.png
+install(FILES noise-100-45-5.png
         DESTINATION ${THEME_DIR} RENAME background-tile.png)
-install(FILES ${CMAKE_SOURCE_DIR}/common/m-small.png
-        DESTINATION ${THEME_DIR} RENAME header-image.png)
+#install(FILES logo.png
+#        DESTINATION ${THEME_DIR} RENAME header-image.png)
