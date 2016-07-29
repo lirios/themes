@@ -1,25 +1,24 @@
-project(HawaiiPlymouth)
+project(Themes)
 
-cmake_minimum_required(VERSION 2.8.12 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.0.0 FATAL_ERROR)
+cmake_policy(VERSION 3.4.1)
+
+# Instruct CMake to run moc and rrc automatically when needed
+set(CMAKE_AUTOMOC ON)
+set(CMAKE_AUTORCC ON)
+
+# Apple-specific configuration
+set(APPLE_SUPPRESS_X11_WARNING ON)
 
 # Set version
-set(PROJECT_VERSION "0.2.2")
+set(PROJECT_VERSION "0.8.90")
 
-# Installation directories
+# Macros
 include(GNUInstallDirs)
-
-# Macro to print feature summary
 include(FeatureSummary)
 
-# Add custom uninstall target
-configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/cmake_uninstall.cmake.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake"
-    IMMEDIATE @ONLY)
-add_custom_target(uninstall "${CMAKE_COMMAND}" -P "${CMAKE_CURRENT_BINARY_DIR}/cmake_uninstall.cmake")
-
 # Set up packaging
-set(CPACK_PACKAGE_NAME "hawaii-plymouth-theme")
+set(CPACK_PACKAGE_NAME "qmlos-themes")
 set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
 set(CPACK_GENERATOR "TGZ")
 set(CPACK_SET_DESTDIR FALSE)

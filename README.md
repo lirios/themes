@@ -1,39 +1,36 @@
-Hawaii theme for Plymouth
-=========================
+Themes
+======
 
-[![IRC Network](https://img.shields.io/badge/irc-freenode-blue.svg "IRC Freenode")](https://webchat.freenode.net/?channels=hawaii-desktop)
-[![GitHub release](https://img.shields.io/github/release/hawaii-desktop/hawaii-plymouth-theme.svg)](https://github.com/hawaii-desktop/hawaii-plymouth-theme)
-[![GitHub issues](https://img.shields.io/github/issues/hawaii-desktop/hawaii-plymouth-theme.svg)](https://github.com/hawaii-desktop/hawaii-plymouth-theme/issues)
-[![Build Status](https://travis-ci.org/hawaii-desktop/hawaii-plymouth-theme.svg?branch=master)](https://travis-ci.org/hawaii-desktop/hawaii-plymouth-theme)
+[![ZenHub.io](https://img.shields.io/badge/supercharged%20by-zenhub.io-blue.svg)](https://zenhub.io)
 
-This repository contains the Hawaii theme for Plymouth.
+[![License](https://img.shields.io/badge/license-GPLv3.0%2B-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
+[![GitHub release](https://img.shields.io/github/release/qmlos/themes.svg)](https://github.com/qmlos/themes)
+[![Build Status](https://travis-ci.org/qmlos/themes.svg?branch=develop)](https://travis-ci.org/qmlos/themes)
+[![GitHub issues](https://img.shields.io/github/issues/qmlos/themes.svg)](https://github.com/qmlos/themes/issues)
+[![Maintained](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/qmlos/themes/commits/develop)
+
+Themes for uniform look and feel throghout qmlOS.
 
 ## Dependencies
 
-In order to install this theme you need:
-
-* [CMake](http://www.cmake.org)
+ * [cmake](https://cmake.org)
 
 ## Installation
 
-Assuming you are in the source directory, just create a build directory
-and run cmake:
+From the root of the repository, run:
 
 ```sh
-mkdir build
-cd build
-cmake -DCMAKE_INSTALL_PREFIX=/opt/hawaii ..
+mkdir build; cd build
+cmake ..
+make
+make install # use sudo if necessary
 ```
 
-If not passed, the `CMAKE_INSTALL_PREFIX` parameter defaults to /usr/local.
-You have to specify a path that fits your needs, /opt/hawaii is just an example.
+On the `cmake` line, you can specify additional configuration parameters:
 
-Package maintainers would pass `-DCMAKE_INSTALL_PREFIX=/usr`.
+ * `-DCMAKE_INSTALL_PREFIX=/path/to/install` (for example, `/opt/qmlos` or `/usr`)
 
-Now type:
+## Licensing
 
-```sh
-make install
-```
-
-from the build directory.
+Licensed under the terms of the GNU General Public License version 3 or,
+at your option, any later version.
