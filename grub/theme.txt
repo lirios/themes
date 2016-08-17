@@ -29,7 +29,7 @@ title-font: "Noto Sans Regular 14"
 message-font: "Noto Sans Regular 14"
 message-color: "#fcfcfc"
 message-bg-color: "#4d4d4d" # TODO: whatever is this for?
-desktop-color: "#37474f" # BlueGrey 800
+desktop-color: "#000000"
 terminal-box: "terminal/terminal_*.png" # FIXME: after selection the terminal box shows up. no clue why.
 terminal-font: "Oxygen Mono Regular 12"
 
