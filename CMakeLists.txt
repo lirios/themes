@@ -30,5 +30,9 @@ add_custom_target(dist COMMAND ${CMAKE_MAKE_PROGRAM} package_source)
 # Subdirectories
 add_subdirectory(plymouth)
 
+# Install
+install(DIRECTORY "${CMAKE_SOURCE_DIR}/grub"
+        DESTINATION "/boot/grub/themes/qmlos")
+
 # Display featute summary
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
