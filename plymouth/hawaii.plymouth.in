@@ -9,5 +9,5 @@ HorizontalAlignment=.5
 VerticalAlignment=.75
 Transition=cross-fade
 TransitionDuration=0.5
-BackgroundStartColor=0x303030
-BackgroundEndColor=0x272727
+BackgroundStartColor=0x37474f
+BackgroundEndColor=0x37474f
