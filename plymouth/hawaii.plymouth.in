@@ -5,9 +5,11 @@ ModuleName=two-step
 
 [two-step]
 ImageDir=@THEME_DIR@
-HorizontalAlignment=.5
-VerticalAlignment=.7
-Transition=cross-fade
-TransitionDuration=0.5
+WatermarkHorizontaAlignment=0.5
+WatermarkVerticalAlignment=0.5
+HorizontalAlignment=0.5
+VerticalAlignment=0.7
+Transition=fade-fade
+TransitionDuration=1.0
 BackgroundStartColor=0x37474f
 BackgroundEndColor=0x37474f
