@@ -33,6 +33,9 @@ add_subdirectory(plymouth)
 # Install
 install(DIRECTORY "${CMAKE_SOURCE_DIR}/grub/"
         DESTINATION "/boot/grub/themes/qmlos")
+install(DIRECTORY "${CMAKE_SOURCE_DIR}/hawaii/"
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/sddm/themes/hawaii
+        PATTERN dummydata EXCLUDE)
 
 # Display featute summary
 feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
