@@ -1,8 +1,8 @@
-set(THEME_DIR ${CMAKE_INSTALL_FULL_DATADIR}/plymouth/themes/hawaii)
+set(THEME_DIR ${CMAKE_INSTALL_FULL_DATADIR}/plymouth/themes/lirios)
 
 configure_file(
-    "${CMAKE_CURRENT_SOURCE_DIR}/hawaii.plymouth.in"
-    "${CMAKE_CURRENT_BINARY_DIR}/hawaii.plymouth"
+    "${CMAKE_CURRENT_SOURCE_DIR}/lirios.plymouth.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/lirios.plymouth"
     IMMEDIATE @ONLY)
 
 set(FILES
@@ -59,7 +59,7 @@ set(FILES
 )
 
 install(FILES ${FILES} DESTINATION ${THEME_DIR})
-install(FILES "${CMAKE_CURRENT_BINARY_DIR}/hawaii.plymouth"
+install(FILES "${CMAKE_CURRENT_BINARY_DIR}/lirios.plymouth"
         DESTINATION ${THEME_DIR})
 
 #install(FILES noise-100-45-5.png

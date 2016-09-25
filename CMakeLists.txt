@@ -18,7 +18,7 @@ include(GNUInstallDirs)
 include(FeatureSummary)
 
 # Set up packaging
-set(CPACK_PACKAGE_NAME "qmlos-themes")
+set(CPACK_PACKAGE_NAME "lirios-themes")
 set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
 set(CPACK_GENERATOR "TGZ")
 set(CPACK_SET_DESTDIR FALSE)
@@ -32,9 +32,9 @@ add_subdirectory(plymouth)
 
 # Install
 install(DIRECTORY "${CMAKE_SOURCE_DIR}/grub/"
-        DESTINATION "/boot/grub/themes/qmlos")
+        DESTINATION "/boot/grub/themes/lirios")
 install(DIRECTORY "${CMAKE_SOURCE_DIR}/sddm/"
-        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/sddm/themes/qmlos
+        DESTINATION ${CMAKE_INSTALL_PREFIX}/share/sddm/themes/lirios
         PATTERN dummydata EXCLUDE)
 
 # Display featute summary
