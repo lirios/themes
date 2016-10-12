@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Liri.
  *
  * Copyright (C) 2014-2016 Pier Luigi Fiorini
  *
@@ -27,7 +27,7 @@
 import QtQuick 2.1
 import QtQuick.Controls 2.0 as QQC
 import Fluid.Controls 1.0
-import Hawaii.Shell 1.0
+import Liri.Shell 1.0
 import SddmComponents 2.0
 
 Indicator {

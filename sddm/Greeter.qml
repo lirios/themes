@@ -1,5 +1,5 @@
 /****************************************************************************
- * This file is part of Hawaii.
+ * This file is part of Liri.
  *
  * Copyright (C) 2014-2016 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
@@ -27,8 +27,8 @@ import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.0
 import Fluid.Controls 1.0
 import Fluid.Material 1.0
-import Hawaii.Shell 1.0
-import Hawaii.LoginManager 1.0
+import Liri.Shell 1.0
+import Liri.LoginManager 1.0
 import SddmComponents 2.0 as SddmComponents
 import "indicators" as Indicators
 
@@ -149,7 +149,7 @@ ColumnLayout {
 
                             Indicators.Keyboard {}
 
-                            // Enable once we moved the indicators to Hawaii.Desktop
+                            // Enable once we moved the indicators to Liri.Desktop
                             /*
                             EventsIndicator {}
 
