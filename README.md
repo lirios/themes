@@ -13,7 +13,23 @@ Themes for uniform look and feel throghout Liri OS.
 
 ## Dependencies
 
+Build time dependencies:
+
  * [cmake](https://cmake.org)
+
+Runtime dependencies for the Plymouth theme:
+
+ * [plymouth](https://cgit.freedesktop.org/plymouth/)
+
+Runtime dependencies for the Grub theme:
+
+ * [grub](http://savannah.gnu.org/git/?group=grub)
+
+Runtime dependencies for the SDDM theme:
+
+ * [sddm](https://github.com/sddm/sddm)
+ * [fluid](https://github.com/lirios/fluid)
+ * [shell](https://github.com/lirios/shell)
 
 ## Installation
 
