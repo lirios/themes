@@ -1,14 +1,16 @@
-sudo: false
+sudo: required
 
-before_script:
-  # cmake
-  - wget --no-check-certificate http://www.cmake.org/files/v3.3/cmake-3.3.0-Linux-x86_64.tar.gz -O cmake.tar.gz
-  - tar -xzf cmake.tar.gz -C $HOME
-  - export PATH=$HOME/cmake-3.3.0-Linux-x86_64/bin:$PATH
-  - cmake --version
-  # prepare
-  - mkdir build
-  - cd build
-  - cmake ..
+arch:
+  packages:
+    - cmake
+    - git
+  script:
+    - cmake . -DCMAKE_INSTALL_PREFIX=/usr
+    - make
 
-script: make
+script:
+  - "curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash"
+
+notifications:
+  email: false
+  slack: lirios:fdUqVmPzqPskEL1UBhqapZ0w
