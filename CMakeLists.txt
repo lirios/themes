@@ -18,7 +18,7 @@ include(GNUInstallDirs)
 include(FeatureSummary)
 
 # Set up packaging
-set(CPACK_PACKAGE_NAME "lirios-themes")
+set(CPACK_PACKAGE_NAME "liri-themes")
 set(CPACK_PACKAGE_VERSION "${PROJECT_VERSION}")
 set(CPACK_GENERATOR "TGZ")
 set(CPACK_SET_DESTDIR FALSE)
