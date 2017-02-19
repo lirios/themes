@@ -25,12 +25,13 @@
  ***************************************************************************/
 
 import QtQuick 2.1
-import QtQuick.Controls 2.0 as QQC
-import Fluid.Controls 1.0
-import Liri.Shell 1.0
+import QtQuick.Controls 2.1
+import QtQuick.Controls.Material 2.1
+import Fluid.Controls 1.0 as FluidControls
+import Liri.Shell 1.0 as LiriShell
 import SddmComponents 2.0
 
-Indicator {
+LiriShell.Indicator {
     id: sessionIndicator
 
     property int currentIndex: sessionModel.lastIndex
@@ -49,31 +50,38 @@ Indicator {
     active: popup.visible
     onClicked: popup.open()
 
-    // TODO: SDDM uses QQuickView not Application, so Drawer
-    // doesn't work, let's use Popup for now even if it doesn't
+    // TODO: SDDM uses QQuickView not ApplicationWindow, so Drawer
+    // doesn't work, let's use a Dialog for now even if it doesn't
     // show the modal background
-    QQC.Popup {
+    Dialog {
         id: popup
-        parent: greeter
+
+        title: qsTr("Select a session")
+
+        parent: root
         modal: true
+
         x: (greeter.width - width) / 2
         y: (greeter.height - height) / 2
         width: 250
         height: 250
 
-        Column {
+        Material.primary: Material.color(Material.Blue, Material.Shade500)
+        Material.accent: Material.color(Material.Blue, Material.Shade500)
+
+        ListView {
+            id: sessions
             anchors.fill: parent
-
-            Repeater {
-                id: sessions
-                model: sessionModel
-
-                ListItem {
-                    text: name
-                    highlighted: currentIndex == index
-                    onClicked: currentIndex = index
-                }
+            anchors.leftMargin: -16
+            anchors.rightMargin: -16
+            model: sessionModel
+            delegate: FluidControls.ListItem {
+                text: name
+                highlighted: currentIndex == index
+                onClicked: currentIndex = index
             }
+
+            ScrollBar.vertical: ScrollBar {}
         }
     }
 }

@@ -25,12 +25,13 @@
  ***************************************************************************/
 
 import QtQuick 2.1
-import QtQuick.Controls 2.0 as QQC
-import Fluid.Controls 1.0
-import Liri.Shell 1.0
+import QtQuick.Controls 2.1
+import QtQuick.Controls.Material 2.1
+import Fluid.Controls 1.0 as FluidControls
+import Liri.Shell 1.0 as LiriShell
 import SddmComponents 2.0
 
-Indicator {
+LiriShell.Indicator {
     id: keyboardIndicator
 
     iconName: "hardware/keyboard"
@@ -47,30 +48,33 @@ Indicator {
     active: popup.visible
     onClicked: popup.open()
 
-    // TODO: SDDM uses QQuickView not Application, so Drawer
-    // doesn't work, let's use Popup for now even if it doesn't
+    // TODO: SDDM uses QQuickView not ApplicationWindow, so Drawer
+    // doesn't work, let's use Dialog for now even if it doesn't
     // show the modal background
-    QQC.Popup {
+    Dialog {
         id: popup
-        parent: greeter
+
+        parent: root
         modal: true
+
         x: (greeter.width - width) / 2
         y: (greeter.height - height) / 2
         width: 250
         height: 250
 
-        Column {
+        Material.primary: Material.color(Material.Blue, Material.Shade500)
+        Material.accent: Material.color(Material.Blue, Material.Shade500)
+
+        ListView {
             anchors.fill: parent
-
-            Repeater {
-                model: keyboard.layouts
-
-                ListItem {
-                    text: modelData.longName
-                    highlighted: index === keyboard.currentLayout
-                    onClicked: keyboard.currentLayout = index
-                }
+            model: keyboard.layouts
+            delegate: FluidControls.ListItem {
+                text: modelData.longName
+                highlighted: index === keyboard.currentLayout
+                onClicked: keyboard.currentLayout = index
             }
+
+            ScrollBar.vertical: ScrollBar {}
         }
     }
 }
