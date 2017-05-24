@@ -7,7 +7,7 @@ Themes
 [![GitHub release](https://img.shields.io/github/release/lirios/themes.svg)](https://github.com/lirios/themes)
 [![Build Status](https://travis-ci.org/lirios/themes.svg?branch=develop)](https://travis-ci.org/lirios/themes)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/themes.svg)](https://github.com/lirios/themes/issues)
-[![Maintained](https://img.shields.io/maintenance/yes/2016.svg)](https://github.com/lirios/themes/commits/develop)
+[![Maintained](https://img.shields.io/maintenance/yes/2017.svg)](https://github.com/lirios/themes/commits/develop)
 
 Themes for uniform look and feel throghout Liri OS.
 
