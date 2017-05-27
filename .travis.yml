@@ -2,11 +2,12 @@ sudo: required
 
 arch:
   packages:
-    - cmake
-    - git
+    - qbs
   script:
-    - cmake . -DCMAKE_INSTALL_PREFIX=/usr
-    - make
+    - qbs-setup-toolchains --detect
+    - qbs-setup-qt /usr/bin/qmake-qt5 qt5
+    - qbs config profiles.qt5.baseProfile ${CC}
+    - qbs build -d build -j $(nproc) --all-products profile:qt5 qbs.installRoot:/ qbs.installPrefix:usr
 
 script:
   - "curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash"
