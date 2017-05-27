@@ -7,6 +7,7 @@ Product {
         name: "Theme"
         files: ["*.pf2", "*.png", "theme.txt"]
         qbs.install: true
-        qbs.installDir: "/boot/grub/themes/lirios"
+        qbs.installDir: "boot/grub/themes/lirios"
+        qbs.installPrefix: ""
     }
 }

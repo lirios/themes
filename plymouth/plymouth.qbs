@@ -1,9 +1,12 @@
 import qbs 1.0
+import qbs.FileInfo
 import qbs.TextFile
 
 Product {
     name: "plymouth"
     type: "plymouth.output"
+
+    Depends { name: "lirideployment" }
 
     Rule {
         inputs: ["plymouth.input"]
@@ -17,7 +20,12 @@ Product {
             var cmd = new JavaScriptCommand();
             cmd.description = "generate " + output.fileName;
             cmd.highlight = "filegen";
-            cmd.vars = {"THEME_DIR": "/usr/share/plymouth/themes/lirios"};
+            cmd.vars = {
+                "THEME_DIR": FileInfo.joinPaths(product.moduleProperty("qbs", "installRoot"),
+                                                product.moduleProperty("qbs", "installPrefix"),
+                                                product.moduleProperty("lirideployment", "dataDir"),
+                                                "plymouth/themes/lirios")
+            };
             cmd.sourceCode = function() {
                 var file = new TextFile(input.filePath, TextFile.ReadOnly);
                 var contents = file.readAll();
@@ -43,7 +51,7 @@ Product {
     Group {
         name: "Final theme"
         qbs.install: true
-        qbs.installDir: "/usr/share/plymouth/themes/lirios"
+        qbs.installDir: lirideployment.dataDir + "/plymouth/themes/lirios"
         fileTags: ["plymouth.output"]
     }
 
@@ -51,6 +59,6 @@ Product {
         name: "Images"
         files: ["*.png"]
         qbs.install: true
-        qbs.installDir: "/usr/share/plymouth/themes/lirios"
+        qbs.installDir: lirideployment.dataDir + "/plymouth/themes/lirios"
     }
 }
