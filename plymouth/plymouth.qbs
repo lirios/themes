@@ -52,7 +52,7 @@ Product {
         name: "Final theme"
         qbs.install: true
         qbs.installDir: lirideployment.dataDir + "/plymouth/themes/lirios"
-        fileTags: ["plymouth.output"]
+        fileTagsFilter: ["plymouth.output"]
     }
 
     Group {
