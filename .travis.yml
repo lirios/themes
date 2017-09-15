@@ -1,6 +1,20 @@
 sudo: required
 
+services:
+  - docker
+
+env:
+  global:
+    # FTP_USER
+    - secure: "QkJ4riLPPd2ZheheMlg9h0KQc8sjUPfICOZy52uauHRWKsADvJKd2MvojTfmFTHkrMLWkp2rWyJAtJkWCbx6He1RFZP656DKVVuNyER0p9+mF9U6DeQTI4FnW53qna+MWrlUs1ayvkULdK+MZ3vzad8VKtwfjDI/0s2NYi1nnBdyR12I5torpgCEwTCvf6nVq9i7W1SS9Y//Kd/rcH+Je8gFD5zF6yVuF+6O+tJi6KiQwqgxI7yk3x0G2yJRx+CPq3BPOn3RtpGLeMgXtTgcejPfMVEK7ttmlWBXksQn8ZycWUAwFDiwXit1D6DHcvMcRQWK1tUc0s24eZ8mWNBviZV5eRbj7mM6JiIfgaEVuWlwlJbD5kNLhpQAhq6nHcxQfb/XKFv6TOB4KQQmDLHQ+WymHQEQfLzbMSaVmbbwpkiINDPP2LCHz2vZ9zZl9lcThp90LK9PJ/j+pcUpUgI/XAgt8YmAB4fC5DLF3q41sp2MG/wRFgrDoZahIjWqeoJPj0FjZZ1B3rlYp5ghxfSgbgsYsurEcM88w+faTHBlxJSTZPzaEOUBFvyB3KrPBk2kscqzk+1VNgMVT4n9bvOnhigpJJKUoRY54f/zAjxdKrdCgVWkOILZAv0LkA5i+3vpfNEbQxMnazakHzkEidtViYGHJeO4kvhbGKmuL+YSaR8="
+    # FTP_PASSWORD
+    - secure: "f0ztxThVJUQ2IXqMDIOboOnrbCtfKOT19ExH9T2EIuNLv6uPyhje0W/rTv2EZE78ZcutMmb3EdzgTP5oOWAG53dzIoXWt+pSxuy2QcsjGUXI3bLf+2j9RWDV5l8lJnbrdJi0K8/cU4S/FnMjIKics/NqD+Wc05ZErQrSP1yKYUADeXXxHvKrJhqjq+y0/kKiSz7gWnC4nxdZc+ceHjIPzG0lsZAsjyhIXSMv4wRR2w8vbtVQjCyWhh5sfiFM7jPOHmDvEuBe2tEbLeqrBJ1NrHjULW53l/0sMCbeUG0ihnA/d39nhOIourBTv3qE/bc3AWSGSLibcd5a33gpUW7uvjHHDCkJafpiJJ3h1va/t/End2qshpjuN+Q9jhOYTr91cZJ2vOhLYQrFoEVl3FcLRAimoygr20ni5rRKWdYlyCjeHvWyGrt98fksBdX4zmyh5rtcWqsHvF+N0dn+RYV4VNhXgTi+8UOvOpf79m0mb4XMv6OaEFkpWyi/QlGqKI34/QWDd0qDTXrVZ/EK8dwTgYLFOQAU02k+yV7RRQcqHMhD+Vvwd0RpKgoA77R6SpRuMUe0EVdJSjNk0p++RyD8Rbu+t/zJ1bTYfhQtkKhv14Hu8q/f2giZ4GW+XnC17WqxvYs+yqEKJqmd4Lr81uGlVDIcPZ8dmtAFjEGXei5a5HM="
+    # FTP_URL
+    - secure: "AQwmuu4KMBk3CPQAOCeKmzI8aJw3ArG1WUQofiBj9/lZ2oSbVNZj0v834yp7iHN9SiNArG6bGG7ZpR7SiEXNADp0KK5ASpaCElonZM3kWGNyIJqtzO/oqbD3A5TXTU8VGqhaR0lDfSy/0Iyw/GcS/B+dyJoiEWVq4fYlDUS8mj7dQ5ZC+sD/7vbWsMBidU1cVLaobLrv65AD/ysJjYn1yF1u6gPRwDQiYpJepjyEYHkN2B6C9vD2eb8Q8euEkJnvJQA3MlUBy3kBNd6QdqVvex9DzA/3adY3YGnYKYN46YariRoRSLxBZ1yKHYXD6ZXghAWVaN1hlF7ZLy1OperkVtYxF/MGNlc9tF9eFYKB7PLKE5A1VG0UFqC0ze/2iUkbd/+XUlrL8eKS7cStkFUv0uLfYHcXaZfghFvIiQ/qcWEHryvQNMruTLEXMRM8/ZVxM70QX7YiKqoTbVL8NL4I+9mhInCcl8prG1uTMfPF0DPOK0hqu2FYErFSGZGIzxbLITHAyedkdyTyQumQ/BmHDEYGZWValkxNNshOvyMET0A5dltttBYLHiThBs/keSIm03PO+jP2GOoOGyCVvMI/EPSk0wgOxXSHDk90O3ohST+AX8czsyzkUxA0blzjz7pGguNGbFJr3X+JqZUQ+d4bT5jh744gM57NcuBZ41zo80w="
+
 arch:
+  artifacts:
+    - qbs-shared-artifacts.tar.gz
   packages:
     - qbs
   script:
@@ -10,7 +24,7 @@ arch:
     - qbs build --no-install -d build -j $(nproc) --all-products profile:qt5 qbs.installRoot:/ qbs.installPrefix:usr
 
 script:
-  - "curl -s https://raw.githubusercontent.com/mikkeloscar/arch-travis/master/arch-travis.sh | bash"
+  - "curl -s https://raw.githubusercontent.com/lirios/repotools/develop/travis/docker-travis.sh | bash"
 
 notifications:
   email: false
