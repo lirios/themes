@@ -7,8 +7,6 @@ Project {
 
     minimumQbsVersion: "1.8.0"
 
-    qbsSearchPaths: ["qbs/shared"]
-
     references: [
         "grub/grub.qbs",
         "plymouth/plymouth.qbs",

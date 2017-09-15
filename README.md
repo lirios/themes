@@ -13,6 +13,10 @@ Themes for uniform look and feel throghout Liri OS.
 
 ## Dependencies
 
+The following modules and their dependencies are required:
+
+ * [qbs-shared](https://github.com/lirios/qbs-shared.git)
+
 Runtime dependencies for the Plymouth theme:
 
  * [plymouth](https://cgit.freedesktop.org/plymouth/)
@@ -54,7 +58,8 @@ and the default value doesn't suit your needs. All are relative to `qbs.installR
 
  * `lirideployment.dataDir:path/to/share` where libraries are installed (default: `share`)
 
-See `qbs/shared/modules/lirideployment/lirideployment.qbs` for more deployment-related parameters.
+See [lirideployment.qbs](https://github.com/lirios/qbs-shared/blob/develop/modules/lirideployment/lirideployment.qbs)
+for more deployment-related parameters.
 
 If you specify `qbs.installRoot` you might need to prefix the entire line with `sudo`,
 depending on whether you have permissions to write there or not.
