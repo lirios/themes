@@ -26,7 +26,7 @@ import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.0
 import Fluid.Controls 1.0
-import Fluid.Material 1.0
+import Fluid.Effects 1.0 as FluidEffects
 import Liri.Shell 1.0
 import Liri.LoginManager 1.0
 import SddmComponents 2.0 as SddmComponents
@@ -118,7 +118,7 @@ ColumnLayout {
                         radius: 2
                         color: Material.dialogColor
                         layer.enabled: visible
-                        layer.effect: ElevationEffect {
+                        layer.effect: FluidEffects.Elevation {
                             elevation: 8
                         }
 
