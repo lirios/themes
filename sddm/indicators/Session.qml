@@ -72,8 +72,8 @@ LiriShell.Indicator {
         ListView {
             id: sessions
             anchors.fill: parent
-            anchors.leftMargin: -16
-            anchors.rightMargin: -16
+            anchors.leftMargin: -popup.leftPadding
+            anchors.rightMargin: -popup.rightPadding
             model: sessionModel
             delegate: FluidControls.ListItem {
                 text: name
