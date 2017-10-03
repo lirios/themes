@@ -25,8 +25,8 @@
  ***************************************************************************/
 
 import QtQuick 2.1
-import QtQuick.Controls 2.1
-import QtQuick.Controls.Material 2.1
+import QtQuick.Controls 2.2
+import QtQuick.Controls.Material 2.2
 import Fluid.Controls 1.0 as FluidControls
 import Liri.Shell 1.0 as LiriShell
 import SddmComponents 2.0
@@ -65,18 +65,20 @@ LiriShell.Indicator {
         Material.primary: Material.color(Material.Blue, Material.Shade500)
         Material.accent: Material.color(Material.Blue, Material.Shade500)
 
-        ListView {
+        ScrollView {
             anchors.fill: parent
             anchors.leftMargin: -popup.leftPadding
             anchors.rightMargin: -popup.rightPadding
-            model: keyboard.layouts
-            delegate: FluidControls.ListItem {
-                text: modelData.longName
-                highlighted: index === keyboard.currentLayout
-                onClicked: keyboard.currentLayout = index
-            }
+            clip: true
 
-            ScrollBar.vertical: ScrollBar {}
+            ListView {
+                model: keyboard.layouts
+                delegate: FluidControls.ListItem {
+                    text: modelData.longName
+                    highlighted: index === keyboard.currentLayout
+                    onClicked: keyboard.currentLayout = index
+                }
+            }
         }
     }
 }
