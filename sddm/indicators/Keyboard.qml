@@ -67,6 +67,8 @@ LiriShell.Indicator {
 
         ListView {
             anchors.fill: parent
+            anchors.leftMargin: -popup.leftPadding
+            anchors.rightMargin: -popup.rightPadding
             model: keyboard.layouts
             delegate: FluidControls.ListItem {
                 text: modelData.longName
