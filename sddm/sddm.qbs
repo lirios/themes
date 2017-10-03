@@ -7,29 +7,17 @@ Product {
 
     Group {
         name: "Theme"
-        files: ["*.qml", "*.png", "*.conf"]
+        files: [
+            "*.qml",
+            "components/*.qml",
+            "indicators/*.qml",
+            "*.png",
+            "images/*.png",
+            "images/*.svg",
+            "*.conf",
+        ]
         qbs.install: true
         qbs.installDir: lirideployment.dataDir + "/sddm/themes/lirios"
-    }
-
-    Group {
-        name: "Components"
-        files: ["components/*.qml"]
-        qbs.install: true
-        qbs.installDir: lirideployment.dataDir + "/sddm/themes/lirios/components"
-    }
-
-    Group {
-        name: "Indicators"
-        files: ["indicators/*.qml"]
-        qbs.install: true
-        qbs.installDir: lirideployment.dataDir + "/sddm/themes/lirios/indicators"
-    }
-
-    Group {
-        name: "Images"
-        files: ["images/*.png", "images/*.svg"]
-        qbs.install: true
-        qbs.installDir: lirideployment.dataDir + "/sddm/themes/lirios/images"
+        qbs.installSourceBase: "."
     }
 }
