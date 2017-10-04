@@ -63,8 +63,8 @@ LiriShell.Indicator {
 
         x: (greeter.width - width) / 2
         y: (greeter.height - height) / 2
-        width: 250
-        height: 250
+        width: 400
+        height: 400
 
         Material.primary: Material.color(Material.Blue, Material.Shade500)
         Material.accent: Material.color(Material.Blue, Material.Shade500)
