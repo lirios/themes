@@ -99,8 +99,6 @@ Rectangle {
                 // emitted, SDDM already started the user session and closed the greeter
                 onLoginSucceeded: stackView.replace(desktopStillComponent)
                 onLoginFailed: errorBar.open(message)
-                onRebootRequested: sddm.reboot()
-                onPowerOffRequested: sddm.powerOff()
             }
 
             InfoBar {

@@ -46,9 +46,6 @@ ColumnLayout {
     signal loginSucceeded()
     signal loginFailed(string message)
 
-    signal rebootRequested()
-    signal powerOffRequested()
-
     Connections {
         target: sddm
         onLoginSucceeded: {
@@ -131,16 +128,9 @@ ColumnLayout {
 
                             DateTimeIndicator {}
 
-                            Indicators.Reboot {
-                                id: rebootIndicator
-                                visible: sddm.canReboot
-                                onClicked: greeter.rebootRequested()
-                            }
-
                             Indicators.PowerOff {
                                 id: powerOffIndicator
-                                visible: sddm.canPowerOff
-                                onClicked: greeter.powerOffRequested()
+                                visible: sddm.canSuspend || sddm.canHibernate || sddm.canPowerOff || sddm.canReboot
                             }
 
                             Indicators.Session {
