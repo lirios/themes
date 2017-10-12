@@ -76,7 +76,10 @@ LiriShell.Indicator {
                 delegate: FluidControls.ListItem {
                     text: modelData.longName
                     highlighted: index === keyboard.currentLayout
-                    onClicked: keyboard.currentLayout = index
+                    onClicked: {
+                        keyboard.currentLayout = index;
+                        popup.close();
+                    }
                 }
             }
         }

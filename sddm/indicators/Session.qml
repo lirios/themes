@@ -81,7 +81,10 @@ LiriShell.Indicator {
                 delegate: FluidControls.ListItem {
                     text: name
                     highlighted: currentIndex === index
-                    onClicked: currentIndex = index
+                    onClicked: {
+                        currentIndex = index;
+                        popup.close();
+                    }
                 }
             }
         }
