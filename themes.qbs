@@ -10,6 +10,7 @@ Project {
     minimumQbsVersion: "1.8.0"
 
     references: [
+        "colorschemes/colorschemes.qbs",
         "grub/grub.qbs",
         "plymouth/plymouth.qbs",
         "sddm/sddm.qbs",
