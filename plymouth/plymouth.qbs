@@ -21,8 +21,7 @@ Product {
             cmd.description = "generate " + output.fileName;
             cmd.highlight = "filegen";
             cmd.vars = {
-                "THEME_DIR": FileInfo.joinPaths(product.moduleProperty("qbs", "installRoot"),
-                                                product.moduleProperty("qbs", "installPrefix"),
+                "THEME_DIR": FileInfo.joinPaths(product.moduleProperty("qbs", "installPrefix"),
                                                 product.moduleProperty("lirideployment", "dataDir"),
                                                 "plymouth/themes/lirios")
             };
