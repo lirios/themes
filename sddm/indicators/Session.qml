@@ -36,7 +36,7 @@ LiriShell.Indicator {
 
     property int currentIndex: sessionModel.lastIndex
 
-    iconName: "action/settings_applications"
+    iconSource: FluidControls.Utils.iconUrl("action/settings_applications")
     visible: sessions.count > 1
 
     //: Session indicator tooltip

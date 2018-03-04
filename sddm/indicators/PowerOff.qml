@@ -32,7 +32,7 @@ LiriShell.Indicator {
     property int remainingSeconds
     property int totalSeconds: 60
 
-    iconName: "action/power_settings_new"
+    iconSource: FluidControls.Utils.iconUrl("action/power_settings_new")
 
     //: Shut down indicator tooltip
     //~ Indicator to shut the system down from SDDM
@@ -113,7 +113,7 @@ LiriShell.Indicator {
 
                     FluidControls.Icon {
                         anchors.horizontalCenter: parent.horizontalCenter
-                        name: "action/power_settings_new"
+                        source: FluidControls.Utils.iconUrl("action/power_settings_new")
                         size: 36
                     }
 
@@ -144,28 +144,28 @@ LiriShell.Indicator {
             }
 
             FluidControls.ListItem {
-                iconSource: Qt.resolvedUrl("../images/sleep.svg")
+                icon.source: Qt.resolvedUrl("../images/sleep.svg")
                 text: qsTr("Sleep")
                 visible: sddm.canSuspend
                 onClicked: sddm.suspend()
             }
 
             FluidControls.ListItem {
-                iconName: "file/file_download"
+                icon.source: FluidControls.Utils.iconUrl("file/file_download")
                 text: qsTr("Suspend to disk")
                 visible: sddm.canHibernate
                 onClicked: sddm.hibernate()
             }
 
             FluidControls.ListItem {
-                iconName: "action/power_settings_new"
+                icon.source: FluidControls.Utils.iconUrl("action/power_settings_new")
                 text: qsTr("Power off")
                 visible: sddm.canPowerOff
                 onClicked: sddm.powerOff()
             }
 
             FluidControls.ListItem {
-                iconSource: Qt.resolvedUrl("../images/reload.svg")
+                icon.source: Qt.resolvedUrl("../images/reload.svg")
                 text: qsTr("Restart")
                 visible: sddm.canReboot
                 onClicked: sddm.reboot()
