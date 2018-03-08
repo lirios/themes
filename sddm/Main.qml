@@ -1,10 +1,7 @@
 /****************************************************************************
  * This file is part of Liri.
  *
- * Copyright (C) 2014-2016 Pier Luigi Fiorini
- *
- * Author(s):
- *    Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+ * Copyright (C) 2014-2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
  * $BEGIN_LICENSE:GPL3+$
  *
@@ -85,8 +82,13 @@ Rectangle {
             }
 
             Greeter {
+                id: greeter
+
+                anchors.left: parent.left
+                anchors.right: parent.right
+                height: parent.height
+
                 primary: true
-                anchors.fill: parent
                 onUserSelected: {
                     background.mode = user.backgroundMode
                     background.pictureUrl = user.pictureUrl
@@ -99,6 +101,13 @@ Rectangle {
                 // emitted, SDDM already started the user session and closed the greeter
                 onLoginSucceeded: stackView.replace(desktopStillComponent)
                 onLoginFailed: errorBar.open(message)
+            }
+
+            InputPanel {
+                id: inputPanel
+
+                anchors.left: parent.left
+                anchors.right: parent.right
             }
 
             InfoBar {

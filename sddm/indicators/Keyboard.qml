@@ -34,7 +34,7 @@ import SddmComponents 2.0
 LiriShell.Indicator {
     id: keyboardIndicator
 
-    iconSource: FluidControls.Utils.iconUrl("hardware/keyboard")
+    iconSource: "../images/keyboard-variant.svg"
     visible: keyboard.layouts.length > 1
 
     //: Keyboard layout indicator tooltip

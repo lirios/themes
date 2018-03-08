@@ -46,6 +46,10 @@ ColumnLayout {
     signal loginSucceeded()
     signal loginFailed(string message)
 
+    property bool virtualKeyboardAvailable: false
+    property bool virtualKeyboardActive: false
+    signal virtualKeyboardToggleRequested()
+
     Connections {
         target: sddm
         onLoginSucceeded: {
@@ -138,6 +142,8 @@ ColumnLayout {
                             }
 
                             Indicators.Keyboard {}
+
+                            Indicators.VirtualKeyboard {}
 
                             // Enable once we moved the indicators to Liri.Desktop
                             /*
