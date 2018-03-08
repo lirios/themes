@@ -110,7 +110,7 @@ Rectangle {
                 anchors.right: parent.right
             }
 
-            InfoBar {
+            SnackBar {
                 id: errorBar
             }
         }
