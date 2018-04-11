@@ -15,7 +15,8 @@ Themes for uniform look and feel throghout Liri OS.
 
 The following modules and their dependencies are required:
 
- * [qbs-shared](https://github.com/lirios/qbs-shared.git)
+ * [qbs](http://code.qt.io/cgit/qbs/qbs.git) >= 1.9.0
+ * [qbs-shared](https://github.com/lirios/qbs-shared.git) >= 1.2.0
 
 Runtime dependencies for the Plymouth theme:
 
