@@ -1,7 +1,7 @@
 /****************************************************************************
  * This file is part of Liri.
  *
- * Copyright (C) 2014-2016 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
+ * Copyright (C) 2018 Pier Luigi Fiorini <pierluigi.fiorini@gmail.com>
  *
  * $BEGIN_LICENSE:GPL3+$
  *
@@ -21,18 +21,22 @@
  * $END_LICENSE$
  ***************************************************************************/
 
-import QtQuick 2.0
-import QtQuick.Controls 2.0
-import Liri.Shell 1.0
+import QtQuick 2.1
+import QtQuick.Controls 2.2
+import Fluid.Controls 1.0 as FluidControls
+import Liri.Shell 1.0 as LiriShell
 
-Indicator {
-    iconName: Qt.resolvedUrl("../images/reload.svg")
+LiriShell.Indicator {
+    iconSource: FluidControls.Utils.iconUrl("hardware/keyboard")
+    active: inputPanel.keyboardActive
+    visible: inputPanel.keyboardAvailable
+    onClicked: inputPanel.toggle()
 
-    //: Reboot indicator tooltip
-    //~ Indicator to restart the system from SDDM
-    tooltip: qsTr("Restart")
+    //: Virtual keyboard indicator tooltip
+    //~ Indicator to change keyboard layout
+    tooltip: qsTr("Toggle virtual keyboard")
 
-    //: Reboot indicator accessibility name
-    //~ Indicator to restart the system from SDDM
-    Accessible.name: qsTr("Reboot the system")
+    //: Virtual keyboard indicator accessibility name
+    //~ Indicator to change keyboard layout
+    Accessible.name: qsTr("Virtual keyboard")
 }

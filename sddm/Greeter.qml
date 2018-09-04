@@ -26,7 +26,7 @@ import QtQuick.Controls 2.0
 import QtQuick.Controls.Material 2.0
 import QtQuick.Layouts 1.0
 import Fluid.Controls 1.0
-import Fluid.Material 1.0
+import Fluid.Effects 1.0 as FluidEffects
 import Liri.Shell 1.0
 import Liri.LoginManager 1.0
 import SddmComponents 2.0 as SddmComponents
@@ -46,8 +46,9 @@ ColumnLayout {
     signal loginSucceeded()
     signal loginFailed(string message)
 
-    signal rebootRequested()
-    signal powerOffRequested()
+    property bool virtualKeyboardAvailable: false
+    property bool virtualKeyboardActive: false
+    signal virtualKeyboardToggleRequested()
 
     Connections {
         target: sddm
@@ -118,7 +119,7 @@ ColumnLayout {
                         radius: 2
                         color: Material.dialogColor
                         layer.enabled: visible
-                        layer.effect: ElevationEffect {
+                        layer.effect: FluidEffects.Elevation {
                             elevation: 8
                         }
 
@@ -131,16 +132,9 @@ ColumnLayout {
 
                             DateTimeIndicator {}
 
-                            Indicators.Reboot {
-                                id: rebootIndicator
-                                visible: sddm.canReboot
-                                onClicked: greeter.rebootRequested()
-                            }
-
                             Indicators.PowerOff {
                                 id: powerOffIndicator
-                                visible: sddm.canPowerOff
-                                onClicked: greeter.powerOffRequested()
+                                visible: sddm.canSuspend || sddm.canHibernate || sddm.canPowerOff || sddm.canReboot
                             }
 
                             Indicators.Session {
@@ -148,6 +142,8 @@ ColumnLayout {
                             }
 
                             Indicators.Keyboard {}
+
+                            Indicators.VirtualKeyboard {}
 
                             // Enable once we moved the indicators to Liri.Desktop
                             /*
