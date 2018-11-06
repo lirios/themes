@@ -1,0 +1,24 @@
+install(
+    FILES
+        components/Indicator.qml
+        components/VirtualKeyboard.qml
+        DesktopStill.qml
+        Greeter.qml
+        images/hibernate.svg
+        images/keyboard-variant.svg
+        images/logo.png
+        images/logout.svg
+        images/reload.svg
+        images/sleep.svg
+        indicators/Keyboard.qml
+        indicators/PowerOff.qml
+        indicators/Session.qml
+        indicators/VirtualKeyboard.qml
+        InputPanel.qml
+        Main.qml
+        metadata.desktop
+        screenshot.png
+        theme.conf
+    DESTINATION
+        "${INSTALL_DATADIR}/sddm/themes/lirios"
+)

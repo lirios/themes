@@ -1,0 +1,17 @@
+install(
+    FILES
+        highlight_c.png
+        noto12.pf2
+        noto14.pf2
+        noto20.pf2
+        noto32.pf2
+        noto-bold.pf2
+        noto.pf2
+        oxygenmono12.pf2
+        progress_bar2_c.png
+        progress_bar_c.png
+        progress_bar_hl_c.png
+        theme.txt
+    DESTINATION
+        "${INSTALL_GRUBDIR}/themes/lirios"
+)
