@@ -16,7 +16,7 @@ endif()
 include(LiriSetup)
 
 ## Grub directory
-set(INSTALL_GRUBDIR "boot/grub" CACHE PATH "Grub [boot/grub]")
+set(INSTALL_GRUBDIR "/boot/grub" CACHE PATH "Grub [/boot/grub]")
 
 ## Add subdirectories:
 add_subdirectory(colorschemes)
