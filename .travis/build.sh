@@ -15,7 +15,7 @@ travis_start "configure"
 msg "Setup CMake..."
 mkdir build
 cd build
-cmake .. -DCMAKE_INSTALL_PREFIX=/usr
+cmake .. -DCMAKE_INSTALL_PREFIX=/usr -DINSTALL_GRUBDIR=/boot/grub
 travis_end "configure"
 
 # Build
