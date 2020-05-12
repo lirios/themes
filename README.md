@@ -3,8 +3,8 @@ Themes
 
 [![License](https://img.shields.io/badge/license-GPLv3.0-blue.svg)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![GitHub release](https://img.shields.io/github/release/lirios/themes.svg)](https://github.com/lirios/themes)
-[![CI](https://github.com/lirios/themes/workflows/CI/badge.svg?branch=develop)](https://github.com/lirios/themes/actions?query=workflow%3ACI)
 [![GitHub issues](https://img.shields.io/github/issues/lirios/themes.svg)](https://github.com/lirios/themes/issues)
+[![CI](https://github.com/lirios/themes/workflows/CI/badge.svg?branch=develop)](https://github.com/lirios/themes/actions?query=workflow%3ACI)
 
 Themes for uniform look and feel throghout Liri OS.
 
