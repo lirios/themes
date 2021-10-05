@@ -33,11 +33,11 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y \
             extra-cmake-modules
-      - name: Fetch and uncompress artifacts
+      - uses: actions/checkout@v2
+      - name: Build dependencies
         run: |
           set -x
-          curl -L -o - "https://dl.bintray.com/liri/artifacts-${{ steps.extract_branch.outputs.branch }}/cmake-shared.tar.gz" | sudo tar -xz -f - -C /
-      - uses: actions/checkout@v2
+          ./.github/workflows/scripts/build-deps ${{ steps.extract_branch.outputs.branch }}
       - name: Build
         run: |
           set -x
