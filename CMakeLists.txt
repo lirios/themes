@@ -15,6 +15,12 @@ endif()
 ## Liri specific setup common for all modules:
 include(LiriSetup)
 
+## Only build on the appropriate platforms.
+if(NOT UNIX OR ANDROID)
+    message(NOTICE "Skipping the build as the condition \"UNIX OR ANDROID\" is not met.")
+    return()
+endif()
+
 ## Grub directory
 set(INSTALL_GRUBDIR "boot/grub" CACHE PATH "Grub [boot/grub]")
 
